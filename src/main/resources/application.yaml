@@ -1,1 +1,26 @@
+### Spring basic configurations
+spring:
+  application:
+    name: temporal-demo
+  temporal:
+    connection:
+      target: localhost:7233
+    workers:
+      - task-queue: MeasurementWorkflowQueue
+        capacity:
+          max-concurrent-workflow-task-pollers: 6
+          max-concurrent-activity-task-pollers: 6
+        rate-limits:
+          max-worker-activities-per-second: 0
+          max-task-queue-activities-per-second: 0
+    workflow-cache:
+      max-instances: 10
+      max-threads: 10
+    workersAutoDiscovery:
+      packages: tech.claudioed
+    namespace: equipment
+
+### Spring web configurations
+server:
+  port: 9999
 

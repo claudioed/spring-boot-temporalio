@@ -1,4 +1,4 @@
-package tech.claudioed.domain.equipment;
+package tech.claudioed.springboot.temporalio.domain;
 
 public class Metadata {
   private String key;
